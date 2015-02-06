@@ -25,7 +25,7 @@ mySQL2="Select * FROM Personnel"
 call query2count(mySQL2, strconn2)
 
 %>
-<!--#include file="lib_dbtable.asp"-->
+<!--#include file="libdbtable.asp"-->
 
 
 </body>
