@@ -46,4 +46,29 @@ Response.Write(oRs.RecordCount)
 oRs.Close
 oConn.Close 
 Set oConn = Nothing
-end sub%>
+end sub
+
+sub createtable(tablename,inputDSN)
+
+Dim tblNew
+
+Set tblNew = Server.CreateObject("ADOX.Table") 
+
+		tblNew.Name = tablename 
+
+Dim col ' As ADOX.Column
+		Set col = Server.CreateObject("ADOX.Column")
+		With col
+			.ParentCatalog = inputDSN
+			.Type = 3 ' adInteger
+			.Name = "ID"
+			.Properties("Autoincrement") = True
+		End With 
+		tblNew.Columns.Append col
+	catDB.Tables.Append tblNew
+	  Set col = Nothing
+	  Set tblNew = Nothing
+	  Set catDB = Nothing	
+
+end sub
+%>
