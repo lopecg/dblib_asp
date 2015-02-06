@@ -30,10 +30,13 @@ Dim catDB ' As ADOX.Catalog
 		' Open the catalog
 		catDB.ActiveConnection = "Provider=Microsoft.Jet.OLEDB.4.0;" & _
 		"Data Source=" & accessdb2
+
+call createtable("Contactos", catDB)
+
 %>
 <!--#include file="libdbtable.asp"-->
 
-call createtable("Contactos", catDB)
+
 
 </body>
 </html>
