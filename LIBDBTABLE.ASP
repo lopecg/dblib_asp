@@ -32,7 +32,7 @@ sub query2table(inputquery, inputDSN)
     set conntemp=nothing
 end sub
 
-sub query2count(inputDSN)
+sub query2count(inputquery,inputDSN)
 Dim oConn
 Set oConn = Server.CreateObject("ADODB.Connection") 
 Dim oRS
@@ -40,7 +40,7 @@ Set oRS = Server.CreateObject("ADODB.Recordset")
 
 oConn.Open inputDSN
 
-oRS.Open "Select * FROM Personnel", oConn, 1, 3 
+oRS.Open inputquery, oConn, 1, 3 
 
 Response.Write(oRs.RecordCount)
 oRs.Close
