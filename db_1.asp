@@ -21,7 +21,7 @@ strconn2="Driver={Microsoft Access Driver (*.mdb)};" & _
 "Pwd=" 
 
 mySQL2="Select * FROM Personnel"
-
+response.Write("<br>")
 call query2count(mySQL2, strconn2)
 
 %>
