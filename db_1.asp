@@ -14,6 +14,8 @@ strconn=strconn & accessDB & ";"
 
 
 call query2table(mySQL,strconn)
+call query2count(strconn)
+
 %>
 <!--#include file="lib_dbtable.asp"-->
 
