@@ -20,7 +20,9 @@ strconn2="Driver={Microsoft Access Driver (*.mdb)};" & _
 "Uid=admin;" & _ 
 "Pwd=" 
 
-call query2count(strconn2)
+mySQL2="Select * FROM Personnel"
+
+call query2count(mySQL2, strconn2)
 
 %>
 <!--#include file="lib_dbtable.asp"-->
