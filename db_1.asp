@@ -14,7 +14,13 @@ strconn=strconn & accessDB & ";"
 
 
 call query2table(mySQL,strconn)
-call query2count(strconn)
+
+strconn2="Driver={Microsoft Access Driver (*.mdb)};" & _ 
+"Dbq=WestIWMD.mdb;" & _ 
+"Uid=admin;" & _ 
+"Pwd=" 
+
+call query2count(strconn2)
 
 %>
 <!--#include file="lib_dbtable.asp"-->
